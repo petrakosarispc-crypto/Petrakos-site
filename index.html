@@ -3,81 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ΠΕΤΡΑΚΟΣ | Γυψοσανίδες - Σιδηροκατασκευές Πάτρα</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    
+    <title>ΠΕΤΡΑΚΟΣ | Γυψοκατασκευές - Σιδηροκατασκευές Πάτρα</title>
     <style>
-        :root { --bg-dark: #0f1115; --card-bg: #181b20; --border-color: #2a2e35; --text-main: #ffffff; --viber: #734a96; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
-
-        header { background: rgba(15, 17, 21, 0.95); padding: 20px; text-align: center; border-bottom: 1px solid var(--border-color); position: relative; z-index: 10; }
-        .logo-container { max-width: 350px; margin: 0 auto; padding: 10px; border-radius: 12px; background: #000000; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .logo-img { width: 100%; height: auto; display: block; border-radius: 6px; }
-
-        .hero { position: relative; padding: 120px 20px; text-align: center; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 85vh; }
-
-        /* SLIDESHOW */
-        .hero-bg-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .hero-bg-slideshow div { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: slideAnimation 20s infinite; }
-        
-        /* ΝΕΑ ΣΕΙΡΑ ΦΩΤΟΓΡΑΦΙΩΝ */
-        .hero-bg-slideshow div:nth-child(1) { background-image: url('https://i.ibb.co/MyNFLHwX/20260530-104517.jpg'); animation-delay: 0s; }
-        .hero-bg-slideshow div:nth-child(2) { background-image: url('https://i.ibb.co/KjbtBHtg/20260608-140743.jpg'); animation-delay: 5s; }
-        .hero-bg-slideshow div:nth-child(3) { background-image: url('https://i.ibb.co/G34xn2gy/20260523-140045.jpg'); animation-delay: 10s; }
-        .hero-bg-slideshow div:nth-child(4) { background-image: url('https://i.ibb.co/CTTZ5YV/20260530-104226.jpg'); animation-delay: 15s; }
-
-        @keyframes slideAnimation {
-            0% { opacity: 0; } 10% { opacity: 1; } 20% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; }
+        :root { 
+            --accent: #808080; /* Το Γκρι μας */
+            --dark-grey: #1a1a1a; 
+            --black: #050505; 
+            --white: #ffffff; 
         }
-
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2; }
-        .hero-content { position: relative; z-index: 3; max-width: 850px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; text-transform: uppercase; color: #fff; text-shadow: 0 4px 15px #000; margin-bottom: 15px; }
-
-        .gallery { padding: 80px 20px; background: var(--bg-dark); text-align: center; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .gallery-item { border-radius: 10px; overflow: hidden; aspect-ratio: 4/3; border: 1px solid var(--border-color); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: var(--black); color: var(--white); line-height: 1.6; }
         
-        .viber-float { position: fixed; bottom: 20px; right: 20px; background: var(--viber); color: #fff; width: 55px; height: 55px; border-radius: 50%; font-size: 26px; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 100; }
+        /* HEADER */
+        header { background: var(--black); padding: 40px 10px; text-align: center; border-bottom: 8px solid var(--accent); }
+        .logo-box { width: 100%; max-width: 600px; margin: 0 auto; border: 4px solid var(--accent); padding: 10px; border-radius: 20px; background: #000; }
+        .logo-img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .brand-title { color: var(--accent); font-size: 3rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 5px; font-weight: 900; }
+
+        /* HERO */
+        .hero { padding: 80px 20px; text-align: center; background: #111; border-bottom: 2px solid var(--accent); }
+        .hero h1 { color: var(--accent); font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; }
+        .hero p { font-size: 1.4rem; max-width: 800px; margin: 0 auto 40px; font-weight: 400; color: #ccc; }
+        .btn-call { background: var(--accent); color: var(--white); padding: 20px 50px; text-decoration: none; border-radius: 10px; font-weight: 800; font-size: 1.6rem; display: inline-block; transition: 0.3s; }
+        .btn-call:hover { background: #555; }
+
+        /* GALLERY (ΦΩΤΟΓΡΑΦΙΕΣ) */
+        .gallery { padding: 60px 15px; background: #f4f4f4; color: #333; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 20px auto; }
+        .gallery-item { border: 5px solid #ccc; border-radius: 8px; overflow: hidden; height: 250px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ΥΠΗΡΕΣΙΕΣ */
+        .services { padding: 80px 15px; background: var(--white); color: var(--black); text-align: center; }
+        .services h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 50px; border-bottom: 10px solid var(--accent); display: inline-block; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .card { background: var(--black); color: var(--white); border: 4px solid var(--accent); padding: 40px 25px; width: 350px; text-align: left; }
+        .card h3 { font-size: 2rem; color: var(--accent); border-left: 10px solid var(--accent); padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; }
+        .card ul { list-style: none; padding: 0; font-size: 1.2rem; }
+        .card li { margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .card li::before { content: "➤ "; color: var(--accent); }
+
+        /* ΕΠΙΚΟΙΝΩΝΙΑ */
+        .contact { background: var(--black); padding: 80px 20px; text-align: center; border-top: 8px solid var(--accent); }
+        .contact h2 { color: var(--accent); font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
+        .info-link { font-size: 1.8rem; display: block; margin: 20px 0; color: var(--white); text-decoration: none; }
+        .info-link span { color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
 
-<a href="viber://chat?number=%2B306986407382" class="viber-float">💬</a>
-
 <header>
-    <div class="logo-container">
-        <img src="https://i.ibb.co/zWtvPdgS/Screenshot-20260215-164659-Chat-GPT.jpg" alt="Logo" class="logo-img">
+    <div class="logo-box">
+        <img src="https://i.ibb.co/zWtvPdgS/Screenshot-20260215-164659-Chat-GPT.jpg" alt="ΠΕΤΡΑΚΟΣ" class="logo-img">
     </div>
+    <div class="brand-title">ΠΕΤΡΑΚΟΣ</div>
 </header>
 
 <section class="hero">
-    <div class="hero-bg-slideshow">
-        <div></div><div></div><div></div><div></div>
+    <h1>ΚΑΤΑΣΚΕΥΑΣΤΙΚΗ ΥΠΕΡΟΧΗ</h1>
+    <p>Γυψοσανίδες, Σιδηροκατασκευές & Ανακαινίσεις στην Πάτρα με επαγγελματισμό.</p>
+    <a href="tel:6986407382" class="btn-call">📞 ΚΑΛΕΣΤΕ ΤΩΡΑ</a>
+</section>
+
+<!-- ΕΔΩ ΜΠΑΙΝΟΥΝ ΟΙ ΦΩΤΟΓΡΑΦΙΕΣ ΣΟΥ -->
+<section class="gallery">
+    <h2>ΤΑ ΕΡΓΑ ΜΑΣ</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://i.ibb.co/MyNFLHwX/20260530-104517.jpg" alt="Έργο 1"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/KjbtBHtg/20260608-140743.jpg" alt="Έργο 2"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/G34xn2gy/20260523-140045.jpg" alt="Έργο 3"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/CTTZ5YV/20260530-104226.jpg" alt="Έργο 4"></div>
     </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Σύγχρονη Δόμηση & Design</h1>
-        <p>Εξειδικευμένες λύσεις σε γυψοσανίδες και σιδηροκατασκευές στην Πάτρα.</p>
-        <div style="margin-top: 30px;">
-            <a href="tel:6986407382" style="background:#fff; color:#000; padding:15px 30px; text-decoration:none; border-radius:8px; font-weight:800;">📞 ΚΛΗΣΗ</a>
+</section>
+
+<section class="services">
+    <h2>ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>ΓΥΨΟΣΑΝΙΔΕΣ</h3>
+            <ul>
+                <li>Ψευδοροφές & Χωρίσματα</li>
+                <li>Κρυφοί Φωτισμοί LED</li>
+                <li>Επενδύσεις Τζακιών</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>ΣΙΔΗΡΟΥ</h3>
+            <ul>
+                <li>Κάγκελα & Σκάλες</li>
+                <li>Στέγαστρα & Υπόστεγα</li>
+                <li>Πόρτες & Περιφράξεις</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>ΑΝΑΚΑΙΝΙΣΗ</h3>
+            <ul>
+                <li>Πλήρεις Ανακαινίσεις</li>
+                <li>Θερμοπροσόψεις</li>
+                <li>Γενικά Μερεμέτια</li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section class="gallery" id="gallery">
-    <h2>ΤΑ ΕΡΓΑ ΜΑΣ</h2>
-    <div class="gallery-grid" style="margin-top: 40px;">
-        <div class="gallery-item"><img src="https://i.ibb.co/MyNFLHwX/20260530-104517.jpg" alt="Έργο"></div>
-        <div class="gallery-item"><img src="https://i.ibb.co/KjbtBHtg/20260608-140743.jpg" alt="Έργο"></div>
-        <div class="gallery-item"><img src="https://i.ibb.co/G34xn2gy/20260523-140045.jpg" alt="Έργο"></div>
-        <div class="gallery-item"><img src="https://i.ibb.co/CTTZ5YV/20260530-104226.jpg" alt="Έργο"></div>
-    </div>
+<section class="contact">
+    <h2>ΕΠΙΚΟΙΝΩΝΙΑ</h2>
+    <a href="tel:6986407382" class="info-link">ΤΗΛ: <span>698 640 7382</span></a>
+    <a href="mailto:Petrakosaris.pc@gmail.com" class="info-link">EMAIL: <span>Petrakosaris.pc@gmail.com</span></a>
+    <br>
+    <a href="https://www.facebook.com" style="background:#555; color:white; padding:15px 30px; text-decoration:none; border-radius:5px; font-weight:bold;">ΕΠΙΣΗΜΗ ΣΕΛΙΔΑ FACEBOOK</a>
 </section>
+
+<footer>
+    <p>&copy; 2026 ΠΕΤΡΑΚΟΣ ΚΑΤΑΣΚΕΥΕΣ | ΠΑΤΡΑ</p>
+</footer>
 
 </body>
 </html>
