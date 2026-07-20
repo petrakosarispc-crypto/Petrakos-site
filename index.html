@@ -1,67 +1,359 @@
-</html>
 <!DOCTYPE html>
 <html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ΠΕΤΡΑΚΟΣ | Γυψοκατασκευές - Σιδηροκατασκευές Πάτρα</title>
+    <title>ΠΕΤΡΑΚΟΣ | Γυψοσανίδες - Σιδηροκατασκευές Πάτρα</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --yellow: #ffcc00; --black: #000000; --white: #ffffff; --dark-grey: #1a1a1a; }
-        body { font-family: 'Arial Black', sans-serif; margin: 0; background: var(--black); color: var(--white); line-height: 1.4; }
+        :root { 
+            --accent: #d4af37;
+            --bg-dark: #0f1115; 
+            --card-bg: #181b20;
+            --border-color: #2a2e35;
+            --text-main: #ffffff; 
+            --text-muted: #9ba1a6;
+            --viber: #734a96;
+        }
         
-        /* ΤΕΡΑΣΤΙΟ HEADER ΜΕ ΛΟΓΟΤΥΠΟ */
-        header { background: var(--black); padding: 40px 10px; text-align: center; border-bottom: 8px solid var(--yellow); }
-        .logo-box { width: 100%; max-width: 600px; margin: 0 auto; border: 4px solid var(--yellow); padding: 10px; border-radius: 20px; background: #000; box-shadow: 0 0 40px rgba(255, 204, 0, 0.4); }
-        .logo-img { width: 100%; height: auto; border-radius: 10px; display: block; }
-        .brand-title { color: var(--yellow); font-size: 3rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 5px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
-        /* ΠΛΟΥΣΙΟ ΠΕΡΙΕΧΟΜΕΝΟ HERO */
-        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com'); background-size: cover; border-bottom: 2px solid var(--yellow); }
-        .hero h1 { color: var(--yellow); font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; }
-        .hero p { font-size: 1.5rem; max-width: 800px; margin: 0 auto 40px; font-weight: bold; }
-        .btn-call { background: var(--yellow); color: var(--black); padding: 25px 60px; text-decoration: none; border-radius: 15px; font-weight: 900; font-size: 1.8rem; display: inline-block; box-shadow: 0 10px 0px #b88a00; text-transform: uppercase; transition: 0.3s; }
-        .btn-call:active { transform: translateY(5px); box-shadow: 0 5px 0px #b88a00; }
+        body { 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+        }
 
-        /* ΥΠΗΡΕΣΙΕΣ ΜΕ ΚΑΡΤΕΣ */
-        .services { padding: 80px 15px; background: var(--white); color: var(--black); text-align: center; }
-        .services h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 50px; border-bottom: 10px solid var(--yellow); display: inline-block; }
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .card { background: var(--black); color: var(--white); border: 4px solid var(--yellow); padding: 40px 25px; width: 350px; border-radius: 0px; box-shadow: 15px 15px 0px var(--black); text-align: left; transition: 0.3s; }
-        .card:hover { transform: scale(1.03); }
-        .card h3 { font-size: 2rem; color: var(--yellow); border-left: 10px solid var(--yellow); padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; }
-        .card ul { list-style: none; padding: 0; font-size: 1.3rem; font-weight: bold; }
-        .card li { margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 8px; }
-        .card li::before { content: "➤ "; color: var(--yellow); }
+        /* HEADER & LOGO */
+        header { 
+            background: rgba(15, 17, 21, 0.95);
+            padding: 25px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            z-index: 10;
+        }
+        .logo-container { 
+            max-width: 380px; 
+            margin: 0 auto; 
+            padding: 10px;
+            border-radius: 12px;
+            background: #000000;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .logo-img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            border-radius: 6px;
+        }
 
-        /* ΕΠΙΚΟΙΝΩΝΙΑ */
-        .contact { background: var(--black); padding: 100px 20px; text-align: center; border-top: 10px solid var(--yellow); }
-        .contact h2 { color: var(--yellow); font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
-        .info-link { font-size: 2.2rem; display: block; margin: 25px 0; color: var(--white); text-decoration: none; font-weight: 900; }
-        .info-link span { color: var(--yellow); }
-        .area { font-size: 1.8rem; margin-top: 40px; color: #777; text-transform: uppercase; letter-spacing: 4px; }
+        /* HERO SECTION ΜΕ ΦΟΝΤΟ ΤΙΣ ΦΩΤΟΓΡΑΦΙΕΣ ΣΟΥ */
+        .hero { 
+            position: relative;
+            padding: 120px 20px; 
+            text-align: center; 
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
 
-        footer { background: #000; color: #444; text-align: center; padding: 40px; font-size: 0.9rem; border-top: 1px solid #111; }
+        /* BACKGROUND SLIDESHOW ANIMATION */
+        .hero-bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .hero-bg-slideshow div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideAnimation 16s infinite;
+        }
+
+        .hero-bg-slideshow div:nth-child(1) {
+            background-image: url('https://i.ibb.co/LdX8yRgt/1000004721.jpg');
+            animation-delay: 0s;
+        }
+        .hero-bg-slideshow div:nth-child(2) {
+            background-image: url('https://i.ibb.co/vxS30R3w/1000004716.jpg');
+            animation-delay: 4s;
+        }
+        .hero-bg-slideshow div:nth-child(3) {
+            background-image: url('https://i.ibb.co/3ykbN0Jb/1000004622.jpg');
+            animation-delay: 8s;
+        }
+        .hero-bg-slideshow div:nth-child(4) {
+            background-image: url('https://i.ibb.co/cK5jM86b/1000004621.jpg');
+            animation-delay: 12s;
+        }
+
+        @keyframes slideAnimation {
+            0% { opacity: 0; transform: scale(1); }
+            10% { opacity: 1; }
+            25% { opacity: 1; }
+            35% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 0; }
+        }
+
+        /* ΣΚΟΤΕΙΝΟ OVERLAY ΓΙΑ ΝΑ ΦΑΙΝΟΝΤΑΙ ΚΑΘΑΡΑ ΤΑ ΓΡΑΜΜΑΤΑ */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.92));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+        }
+
+        .hero h1 { 
+            font-size: clamp(2rem, 5vw, 3.2rem); 
+            font-weight: 900; 
+            letter-spacing: -0.5px;
+            margin-bottom: 15px; 
+            text-transform: uppercase;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+        .hero p { 
+            font-size: clamp(1rem, 2.5vw, 1.25rem); 
+            max-width: 650px; 
+            margin: 0 auto 35px; 
+            color: var(--text-muted);
+            font-weight: 400;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+        }
+        
+        /* BUTTONS */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (min-width: 600px) {
+            .cta-group { flex-direction: row; }
+        }
+
+        .btn { 
+            padding: 16px 36px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+        .btn-primary {
+            background: #ffffff; 
+            color: #000000; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .btn-primary:hover { background: #e0e0e0; transform: translateY(-2px); }
+        
+        .btn-secondary {
+            background: rgba(0,0,0,0.5);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(5px);
+        }
+        .btn-secondary:hover { border-color: #ffffff; background: rgba(255,255,255,0.1); }
+
+        /* SERVICES */
+        .services { 
+            padding: 80px 20px; 
+            background: #13151a; 
+            text-align: center; 
+        }
+        .services h2, .gallery h2 { 
+            font-size: clamp(1.8rem, 4vw, 2.4rem); 
+            font-weight: 800;
+            margin-bottom: 40px; 
+            letter-spacing: 1px;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .card { 
+            background: var(--card-bg); 
+            padding: 35px 25px; 
+            text-align: left; 
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); border-color: #404652; }
+        .card h3 { 
+            color: var(--text-main); 
+            font-size: 1.4rem; 
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 3px solid #ffffff;
+            padding-left: 10px;
+        }
+        .card ul { list-style: none; }
+        .card li { 
+            margin-bottom: 10px; 
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .card li::before { content: "• "; color: #ffffff; font-weight: bold; margin-right: 5px; }
+
+        /* GALLERY SECTION */
+        .gallery {
+            padding: 80px 20px;
+            text-align: center;
+            background: var(--bg-dark);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            aspect-ratio: 4/3;
+            background: var(--card-bg);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CONTACT SECTION */
+        .contact { 
+            padding: 80px 20px; 
+            text-align: center; 
+            background: #13151a; 
+            border-top: 1px solid var(--border-color);
+        }
+        .contact h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+        .contact p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+        
+        .phone-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 0 auto 30px;
+        }
+        .info-link { 
+            font-size: clamp(1.4rem, 4vw, 1.8rem); 
+            display: block; 
+            margin: 10px 0; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            font-weight: 700; 
+        }
+        .info-link:hover { color: var(--text-muted); }
+        
+        .social-btn {
+            background: #1877F2; 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        footer { padding: 30px 20px; text-align: center; background: var(--bg-dark); color: #555; font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+
+        /* FLOATING VIBER BUTTON */
+        .viber-float {
+            position: fixed;
+            width: 55px;
+            height: 55px;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--viber);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 26px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
+<!-- FLOATING VIBER -->
+<a href="viber://chat?number=%2B306986407382" class="viber-float" title="Μιλήστε μας στο Viber">
+    💬
+</a>
+
 <header>
-    <div class="logo-box">
-        <!-- Το νέο σου Link για το λογότυπο -->
+    <div class="logo-container">
         <img src="https://i.ibb.co/zWtvPdgS/Screenshot-20260215-164659-Chat-GPT.jpg" alt="ΠΕΤΡΑΚΟΣ ΛΟΓΟΤΥΠΟ" class="logo-img">
     </div>
-    <div class="brand-title">ΠΕΤΡΑΚΟΣ</div>
-    <p style="color: #666; font-size: 1.3rem; margin-top: 5px; letter-spacing: 3px;">ΚΑΤΑΣΚΕΥΑΣΤΙΚΗ ΥΠΕΡΟΧΗ</p>
 </header>
 
 <section class="hero">
-    <h1>ΠΡΩΤΟΠΟΡΙΑ ΣΤΙΣ ΚΑΤΑΣΚΕΥΕΣ</h1>
-    <p>Γυψοσανίδες, Σιδηροκατασκευές & Ανακαινίσεις με την εγγύηση και τη συνέπεια της εταιρείας ΠΕΤΡΑΚΟΣ στην Πάτρα.</p>
-    <a href="tel:6986407382" class="btn-call">📲 ΚΑΛΕΣΤΕ ΤΩΡΑ</a>
+    <!-- SLIDESHOW ΜΕ ΤΙΣ ΦΩΤΟΓΡΑΦΙΕΣ ΣΟΥ -->
+    <div class="hero-bg-slideshow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Σύγχρονη Δόμηση & Design</h1>
+        <p>Εξειδικευμένες λύσεις σε γυψοσανίδες και σιδηροκατασκευές με υψηλή αισθητική και αντοχή στην Πάτρα και σε όλη την Αχαΐα.</p>
+        <div class="cta-group">
+            <a href="tel:6986407382" class="btn btn-primary">📞 ΚΛΗΣΗ ΓΙΑ ΠΡΟΣΦΟΡΑ</a>
+            <a href="#gallery" class="btn btn-secondary">ΔΕΙΤΕ ΤΑ ΕΡΓΑ ΜΑΣ</a>
+        </div>
+    </div>
 </section>
 
-<section class="services">
-    <h2>ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ</h2>
+<section class="services" id="services">
+    <h2>ΥΠΗΡΕΣΙΕΣ</h2>
     <div class="grid">
         <div class="card">
             <h3>ΓΥΨΟΣΑΝΙΔΕΣ</h3>
@@ -69,185 +361,66 @@
                 <li>Ψευδοροφές & Χωρίσματα</li>
                 <li>Κρυφοί Φωτισμοί LED</li>
                 <li>Επενδύσεις Τζακιών</li>
-                <li>Ράφια & Συνθέσεις</li>
+                <li>Ράφια & Ειδικές Κατασκευές</li>
             </ul>
         </div>
         <div class="card">
-            <h3>ΣΙΔΗΡΟΥ</h3>
+            <h3>ΣΙΔΗΡΟΚΑΤΑΣΚΕΥΕΣ</h3>
             <ul>
-                <li>Κάγκελα & Σκάλες</li>
-                <li>Στέγαστρα & Υπόστεγα</li>
+                <li>Κάγκελα Inox & Σιδήρου</li>
+                <li>Στέγαστρα & Πέργκολες</li>
                 <li>Πόρτες & Περιφράξεις</li>
-                <li>Ειδικές Κατασκευές</li>
+                <li>Βιομηχανικά Σχέδια</li>
             </ul>
         </div>
         <div class="card">
             <h3>ΑΝΑΚΑΙΝΙΣΗ</h3>
             <ul>
-                <li>Πλήρεις Ανακαινίσεις</li>
-                <li>Θερμοπροσόψεις</li>
-                <li>Κατεδαφίσεις</li>
-                <li>Γενικά Μερεμέτια</li>
+                <li>Ολική Ανακαίνιση Χώρων</li>
+                <li>Εξωτερική Θερμοπρόσοψη</li>
+                <li>Ελαιοχρωματισμοί</li>
+                <li>Μερεμέτια Παντός Τύπου</li>
             </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ ΜΕ ΤΑ ΕΡΓΑ ΣΟΥ -->
+<section class="gallery" id="gallery">
+    <h2>ΤΑ ΕΡΓΑ ΜΑΣ</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://i.ibb.co/LdX8yRgt/1000004721.jpg" alt="Γυψοσανίδες Πάτρα - Έργο 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.ibb.co/vxS30R3w/1000004716.jpg" alt="Γυψοσανίδες Πάτρα - Έργο 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.ibb.co/3ykbN0Jb/1000004622.jpg" alt="Γυψοσανίδες Πάτρα - Έργο 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.ibb.co/cK5jM86b/1000004621.jpg" alt="Γυψοσανίδες Πάτρα - Έργο 4">
         </div>
     </div>
 </section>
 
 <section class="contact">
     <h2>ΕΠΙΚΟΙΝΩΝΙΑ</h2>
-    <a href="tel:6986407382" class="info-link">📞 ΤΗΛ 1: <span>698 640 7382</span></a>
-    <a href="tel:6909440118" class="info-link">📞 ΤΗΛ 2: <span>690 944 0118</span></a>
-    <a href="mailto:Petrakosaris.pc@gmail.com" class="info-link" style="font-size: 1.5rem;">✉️ <span>Petrakosaris.pc@gmail.com</span></a>
-    <div class="area">📍 ΠΑΤΡΑ • ΑΧΑΪΑ • ΠΕΛΟΠΟΝΝΗΣΟΣ</div>
-    <br><br>
-    <a href="https://www.facebook.com" target="_blank" style="background:#1877F2; color:white; padding:20px 40px; text-decoration:none; border-radius:10px; font-weight:bold; font-size:1.6rem; display:inline-block;">ΕΠΙΣΗΜΗ ΣΕΛΙΔΑ FACEBOOK</a>
+    <p>📍 ΠΑΤΡΑ • ΑΧΑΪΑ • ΠΕΛΟΠΟΝΝΗΣΟΣ</p>
+    
+    <div class="phone-box">
+        <a href="tel:6986407382" class="info-link">ΤΗΛ: 698 640 7382</a>
+        <a href="tel:6909440118" class="info-link">ΤΗΛ: 690 944 0118</a>
+    </div>
+    
+    <a href="https://www.facebook.com" target="_blank" class="social-btn">
+        Βρείτε μας στο Facebook
+    </a>
 </section>
 
 <footer>
-    <p>&copy; 2026 ΠΕΤΡΑΚΟΣ ΚΑΤΑΣΚΕΥΕΣ | ΠΑΤΡΑ</p>
+    <p>&copy; 2026 ΠΕΤΡΑΚΟΣ ΚΑΤΑΣΚΕΥΕΣ | Σχεδίαση & Κατασκευή</p>
 </footer>
 
 </body>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    background:#111;
-    color:#fff;
-    line-height:1.6;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    background:rgba(0,0,0,.9);
-    backdrop-filter:blur(8px);
-    z-index:1000;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.logo img{
-    width:70px;
-}
-
-.logo h1{
-    color:#fff;
-    font-size:30px;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#ff7a00;
-}
-
-.phone{
-    background:#ff7a00;
-    color:white;
-    padding:12px 22px;
-    border-radius:40px;
-}
-
-.hero{
-    height:100vh;
-    background:url(images/hero.jpg) center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
-
-.overlay{
-    background:rgba(0,0,0,.65);
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero-content{
-    text-align:center;
-    max-width:900px;
-    padding:20px;
-}
-
-.hero h2{
-    font-size:70px;
-    color:#fff;
-}
-
-.hero h3{
-    color:#ff7a00;
-    font-size:32px;
-    margin:20px 0;
-}
-
-.hero p{
-    font-size:22px;
-    margin-bottom:40px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:18px 40px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.orange{
-    background:#ff7a00;
-    color:white;
-}
-
-.blue{
-    background:#005eff;
-    color:white;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-}
+</html>
