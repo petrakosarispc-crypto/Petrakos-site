@@ -64,7 +64,7 @@
             min-height: 85vh;
         }
 
-        /* BACKGROUND SLIDESHOW ANIMATION (ΧΩΡΙΣ ΘΟΛΩΜΑ) */
+        /* BACKGROUND SLIDESHOW ANIMATION (HD - ΑΥΘΕΝΤΙΚΗ ΑΝΑΛΥΣΗ) */
         .hero-bg-slideshow {
             position: absolute;
             top: 0;
@@ -79,11 +79,13 @@
             height: 100%;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             opacity: 0;
             animation: slideAnimation 16s infinite;
+            image-rendering: -webkit-optimize-contrast;
         }
 
-        /* ΟΙ ΦΩΤΟΓΡΑΦΙΕΣ ΣΟΥ */
+        /* HD ΑΠΕΥΘΕΙΑΣ ΣΥΝΔΕΣΜΟΙ ΦΩΤΟΓΡΑΦΙΩΝ */
         .hero-bg-slideshow div:nth-child(1) {
             background-image: url('https://i.ibb.co/ymhpT5Hw/1000004721.jpg');
             animation-delay: 0s;
@@ -102,21 +104,21 @@
         }
 
         @keyframes slideAnimation {
-            0% { opacity: 0; transform: scale(1); }
-            10% { opacity: 1; }
+            0% { opacity: 0; }
+            8% { opacity: 1; }
             25% { opacity: 1; }
-            35% { opacity: 0; transform: scale(1.03); }
+            33% { opacity: 0; }
             100% { opacity: 0; }
         }
 
-        /* ΕΛΑΦΡΥ ΣΚΟΤΕΙΝΟ ΦΙΛΤΡΟ ΓΙΑ ΑΝΤΙΘΕΣΗ (ΧΩΡΙΣ BLUR) */
+        /* ΕΛΑΧΙΣΤΗ ΣΚΙΑΣΗ ΜΟΝΟ ΠΙΣΩ ΑΠΟ ΤΑ ΓΡΑΜΜΑΤΑ ΓΙΑ ΔΙΑΒΑΣΙΜΟΤΗΤΑ */
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45); /* Ελαφρύ σκοτάδι για να είναι πεντακάθαρη η φωτογραφία */
+            background: rgba(0, 0, 0, 0.35);
             z-index: 2;
         }
 
@@ -126,7 +128,7 @@
             max-width: 850px;
         }
 
-        /* ΓΡΑΜΜΑΤΑ ΜΕ ΕΝΤΟΝΗ ΣΚΙΑ ΓΙΑ ΝΑ ΞΕΧΩΡΙΖΟΥΝ ΠΑΝΩ ΑΠΟ ΤΗΝ ΚΑΘΑΡΗ ΕΙΚΟΝΑ */
+        /* ΚΑΘΑΡΑ ΓΡΑΜΜΑΤΑ ΜΕ ΠΕΡΙΓΡΑΜΜΑ & ΣΚΙΑ */
         .hero h1 { 
             font-size: clamp(2.2rem, 6vw, 3.5rem); 
             font-weight: 900; 
@@ -134,7 +136,7 @@
             margin-bottom: 15px; 
             text-transform: uppercase;
             color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 5px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 4px 20px #000, 0 0 10px #000;
         }
         .hero p { 
             font-size: clamp(1.1rem, 3vw, 1.3rem); 
@@ -142,7 +144,7 @@
             margin: 0 auto 35px; 
             color: #ffffff;
             font-weight: 600;
-            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 2px 15px #000, 0 0 8px #000;
         }
         
         /* BUTTONS */
@@ -174,16 +176,15 @@
         .btn-primary {
             background: #ffffff; 
             color: #000000; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
         }
         .btn-primary:hover { background: #e0e0e0; transform: translateY(-2px); }
         
         .btn-secondary {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
             color: var(--text-main);
             border: 1px solid var(--border-color);
-            backdrop-filter: blur(4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
         }
         .btn-secondary:hover { border-color: #ffffff; background: rgba(255,255,255,0.2); }
 
@@ -231,7 +232,7 @@
         }
         .card li::before { content: "• "; color: #ffffff; font-weight: bold; margin-right: 5px; }
 
-        /* GALLERY SECTION */
+        /* GALLERY SECTION HD */
         .gallery {
             padding: 80px 20px;
             text-align: center;
@@ -337,7 +338,7 @@
 </header>
 
 <section class="hero">
-    <!-- SLIDESHOW ΜΕ ΤΙΣ ΦΩΤΟΓΡΑΦΙΕΣ ΣΟΥ (ΚΑΘΑΡΕΣ) -->
+    <!-- SLIDESHOW HD -->
     <div class="hero-bg-slideshow">
         <div></div>
         <div></div>
