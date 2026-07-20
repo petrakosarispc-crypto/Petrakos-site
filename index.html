@@ -1,145 +1,123 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΠΕΤΡΑΚΟΣ | Γυψοσανίδες - Σιδηροκατασκευές Πάτρα</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --accent: #d4af37;
+            --bg-dark: #0f1115; 
+            --card-bg: #181b20;
+            --border-color: #2a2e35;
+            --text-main: #ffffff; 
+            --text-muted: #d0d5ba;
+            --viber: #734a96;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
-<title>ΠΕΤΡΑΚΟΣ | Γυψοκατασκευές - Σιδηροκατασκευές - Ανακαινίσεις Πάτρα</title>
+        body { background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
-<meta name="description"
-content="ΠΕΤΡΑΚΟΣ - Γυψοκατασκευές, Σιδηροκατασκευές, Θερμοπροσόψεις και Ανακαινίσεις στην Πάτρα και σε όλη την Αχαΐα.">
+        /* HEADER */
+        header { background: rgba(15, 17, 21, 0.95); padding: 20px; text-align: center; border-bottom: 1px solid var(--border-color); position: relative; z-index: 10; }
+        .logo-container { max-width: 350px; margin: 0 auto; padding: 10px; border-radius: 12px; background: #000000; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .logo-img { width: 100%; height: auto; display: block; border-radius: 6px; }
 
-<meta name="keywords"
-content="Γυψοκατασκευές Πάτρα, Σιδηροκατασκευές Πάτρα, Ανακαινίσεις Πάτρα, Θερμοπροσόψεις">
+        /* HERO */
+        .hero { position: relative; padding: 120px 20px; text-align: center; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 85vh; }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        /* SLIDESHOW */
+        .hero-bg-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-bg-slideshow div { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: slideAnimation 16s infinite; }
+        .hero-bg-slideshow div:nth-child(1) { background-image: url('https://i.ibb.co/ymhpT5Hw/1000004721.jpg'); animation-delay: 0s; }
+        .hero-bg-slideshow div:nth-child(2) { background-image: url('https://i.ibb.co/Z12Ztd6t/1000004716.jpg'); animation-delay: 4s; }
+        .hero-bg-slideshow div:nth-child(3) { background-image: url('https://i.ibb.co/BVFsJRNC/1000004622.jpg'); animation-delay: 8s; }
+        .hero-bg-slideshow div:nth-child(4) { background-image: url('https://i.ibb.co/53sBgYy/1000004621.jpg'); animation-delay: 12s; }
 
-<link rel="stylesheet" href="style.css">
+        @keyframes slideAnimation {
+            0% { opacity: 0; } 10% { opacity: 1; } 25% { opacity: 1; } 35% { opacity: 0; } 100% { opacity: 0; }
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 850px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; text-transform: uppercase; color: #fff; text-shadow: 0 4px 15px #000; margin-bottom: 15px; }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: #fff; text-shadow: 0 2px 10px #000; margin-bottom: 30px; }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+        /* BUTTONS */
+        .cta-group { display: flex; flex-direction: column; gap: 15px; align-items: center; justify-content: center; }
+        @media (min-width: 600px) { .cta-group { flex-direction: row; } }
+        .btn { padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; width: 100%; max-width: 250px; justify-content: center; transition: 0.3s; }
+        .btn-primary { background: #fff; color: #000; }
+        .btn-secondary { background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #fff; }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        /* SERVICES & GALLERY */
+        .services, .gallery { padding: 80px 20px; background: #13151a; text-align: center; }
+        .gallery { background: var(--bg-dark); }
+        .grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .gallery-item { border-radius: 10px; overflow: hidden; aspect-ratio: 4/3; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 
+        /* CONTACT */
+        .contact { padding: 80px 20px; text-align: center; background: #13151a; }
+        .info-link { font-size: 1.5rem; color: #fff; text-decoration: none; font-weight: 700; display: block; margin: 10px 0; }
+        .viber-float { position: fixed; bottom: 20px; right: 20px; background: var(--viber); color: #fff; padding: 15px; border-radius: 50%; font-size: 24px; z-index: 100; }
+    </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+<a href="viber://chat?number=%2B306986407382" class="viber-float">💬</a>
 
-<div class="container">
+<header>
+    <div class="logo-container">
+        <img src="https://i.ibb.co/zWtvPdgS/Screenshot-20260215-164659-Chat-GPT.jpg" alt="Logo" class="logo-img">
+    </div>
+</header>
 
-<a class="navbar-brand fw-bold" href="#">
-
-<img src="images/logo.png" class="logo">
-
-ΠΕΤΡΑΚΟΣ
-
-</a>
-
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-<div class="collapse navbar-collapse"
-id="menu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#home">Αρχική</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#services">Υπηρεσίες</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#projects">Έργα</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#about">Σχετικά</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Επικοινωνία</a>
-</li>
-
-</ul>
-
-<a href="tel:6986407382"
-class="btn btn-warning ms-4">
-
-<i class="fa-solid fa-phone"></i>
-
-698 640 7382
-
-</a>
-
-</div>
-
-</div>
-
-</nav>
-
-<section id="home" class="hero">
-
-<div class="overlay">
-
-<div class="container text-center">
-
-<img src="images/logo.png" class="hero-logo">
-
-<h1>
-
-ΠΕΤΡΑΚΟΣ
-
-</h1>
-
-<h2>
-
-ΓΥΨΟΚΑΤΑΣΚΕΥΕΣ • ΣΙΔΗΡΟΚΑΤΑΣΚΕΥΕΣ • ΑΝΑΚΑΙΝΙΣΕΙΣ
-
-</h2>
-
-<p>
-
-Ποιότητα • Αξιοπιστία • Επαγγελματισμός
-
-Εξυπηρετούμε Πάτρα και όλη την Αχαΐα.
-
-</p>
-
-<div class="mt-5">
-
-<a href="tel:6986407382"
-class="btn btn-warning btn-lg">
-
-📞 Καλέστε Τώρα
-
-</a>
-
-<a href="https://wa.me/306986407382"
-class="btn btn-success btn-lg ms-3">
-
-💬 WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="hero">
+    <div class="hero-bg-slideshow">
+        <div></div><div></div><div></div><div></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Σύγχρονη Δόμηση & Design</h1>
+        <p>Εξειδικευμένες λύσεις σε γυψοσανίδες και σιδηροκατασκευές.</p>
+        <div class="cta-group">
+            <a href="tel:6986407382" class="btn btn-primary">ΚΛΗΣΗ</a>
+            <a href="#gallery" class="btn btn-secondary">ΤΑ ΕΡΓΑ ΜΑΣ</a>
+        </div>
+    </div>
 </section>
+
+<section class="services" id="services">
+    <h2>ΥΠΗΡΕΣΙΕΣ</h2>
+    <div class="grid">
+        <div class="card"><h3>ΓΥΨΟΣΑΝΙΔΕΣ</h3><p>Ψευδοροφές, Χωρίσματα, Κρυφός Φωτισμός.</p></div>
+        <div class="card"><h3>ΣΙΔΗΡΟΚΑΤΑΣΚΕΥΕΣ</h3><p>Κάγκελα, Στέγαστρα, Πόρτες.</p></div>
+        <div class="card"><h3>ΑΝΑΚΑΙΝΙΣΗ</h3><p>Ολική ανακαίνιση & ελαιοχρωματισμοί.</p></div>
+    </div>
+</section>
+
+<section class="gallery" id="gallery">
+    <h2>ΤΑ ΕΡΓΑ ΜΑΣ</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://i.ibb.co/ymhpT5Hw/1000004721.jpg"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/Z12Ztd6t/1000004716.jpg"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/BVFsJRNC/1000004622.jpg"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/53sBgYy/1000004621.jpg"></div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>ΕΠΙΚΟΙΝΩΝΙΑ</h2>
+    <a href="tel:6986407382" class="info-link">698 640 7382</a>
+    <a href="tel:6909440118" class="info-link">690 944 0118</a>
+</section>
+
+</body>
+</html>
